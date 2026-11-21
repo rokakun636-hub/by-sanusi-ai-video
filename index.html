@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BY SANUSI — AI Auto Video Studio</title>
+<style>
+:root{--bg:#090b12;--panel:#121725;--line:#252e42;--muted:#9aa6bd;--txt:#f4f6fb;--a:#8b5cf6;--b:#20c7d9}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#211548 0,transparent 34%),var(--bg);color:var(--txt);font:15px system-ui,Arial}
+header{padding:22px max(18px,calc((100% - 1080px)/2));border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:24px;font-weight:900;letter-spacing:1px}.logo span{color:#a78bfa}.tag{font-size:11px;color:var(--muted);letter-spacing:2px}
+main{max-width:1080px;margin:auto;padding:22px 16px 50px}.hero{padding:25px 4px 18px}.hero h1{font-size:clamp(27px,6vw,42px);margin:0 0 8px}.hero p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.card{background:linear-gradient(145deg,#151c2d,#101522);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px}
+h2{font-size:17px;margin:0 0 15px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.tab,button{border:1px solid var(--line);border-radius:11px;background:#1b2335;color:var(--txt);padding:11px 14px;font-weight:650;cursor:pointer}.tab.active,button.primary{background:linear-gradient(110deg,var(--a),#5b6cf5);border:0}.field{margin:13px 0}.field label{display:block;color:#c8d1e2;font-size:13px;margin-bottom:7px}input,select,textarea{width:100%;background:#0b101c;border:1px solid #303b52;border-radius:10px;padding:12px;color:var(--txt);font:inherit}textarea{min-height:110px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.muted{color:var(--muted);font-size:12px;line-height:1.5}.preview{min-height:230px;border:1px dashed #46516a;border-radius:14px;background:#0b101b;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;overflow:hidden}.preview img,.preview video{max-width:100%;max-height:340px;border-radius:10px}.output{white-space:pre-wrap;background:#0b101b;border:1px solid var(--line);border-radius:12px;padding:13px;min-height:100px;color:#dbe5ff;line-height:1.55}.scene{border-left:3px solid var(--a);padding:8px 12px;margin:9px 0;background:#0c1220;border-radius:0 10px 10px 0}.hidden{display:none}footer{text-align:center;color:var(--muted);font-size:12px;padding:18px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}header{padding:17px}.row{grid-template-columns:1fr}.card{padding:15px}}
+</style></head>
+<body>
+<header><div><div class="logo">BY <span>SANUSI</span></div><div class="tag">AI AUTO VIDEO STUDIO</div></div><div class="tag">CREATIVE STUDIO</div></header>
+<main>
+<section class="hero"><h1>Ubah ide menjadi video.</h1><p>Studio persiapan video AI: susun prompt, storyboard, dan aset dalam satu tempat.</p></section>
+<div class="grid">
+<div>
+<section class="card">
+<h2>1. Buat proyek video</h2>
+<div class="tabs"><button class="tab active" data-mode="text">Text to Video</button><button class="tab" data-mode="image">Image to Video</button></div>
+<div class="field"><label>Ide atau cerita video</label><textarea id="idea" placeholder="Contoh: seekor anak kucing menemukan taman ajaib saat matahari terbit..."></textarea></div>
+<div class="field hidden" id="uploadWrap"><label>Unggah gambar referensi</label><input id="upload" type="file" accept="image/*"><p class="muted">Gambar akan ditampilkan sebagai referensi di browser ini.</p></div>
+<div class="row">
+<div class="field"><label>Gaya video</label><select id="style"><option>Cinematic realistic</option><option>3D animation lucu</option><option>Anime action</option><option>Documentary</option><option>DIY tutorial</option><option>Fantasy magical</option></select></div>
+<div class="field"><label>Rasio video</label><select id="ratio"><option value="9:16">9:16 — Reels / Shorts</option><option value="16:9">16:9 — YouTube</option><option value="1:1">1:1 — Square</option></select></div>
+<div class="field"><label>Durasi target</label><select id="duration"><option>5 detik</option><option selected>10 detik</option><option>15 detik</option><option>30 detik</option><option>60 detik</option></select></div>
+<div class="field"><label>Kualitas target</label><select id="quality"><option>720p</option><option selected>1080p</option><option>4K (jika didukung layanan)</option></select></div>
+</div>
+<div class="field"><label>Gerakan kamera</label><select id="camera"><option>Slow cinematic dolly-in</option><option>Tracking shot</option><option>Wide establishing shot</option><option>Handheld dynamic camera</option><option>Orbit camera</option><option>Static camera</option></select></div>
+<div class="actions"><button class="primary" id="make">✨ Buat Prompt Otomatis</button><button id="clear">Reset</button></div>
+</section>
+<section class="card"><h2>2. Prompt video siap digunakan</h2><div id="prompt" class="output">Prompt yang dibuat akan muncul di sini.</div><div class="actions"><button id="copy" class="primary">Salin Prompt</button><button id="story">Buat Storyboard 5 Scene</button></div><p class="muted">Prompt dapat disalin ke layanan video AI pilihan Anda. Pembuatan video belum berjalan langsung di halaman ini.</p></section>
+</div>
+<div>
+<section class="card"><h2>Preview gambar referensi</h2><div class="preview" id="preview"><span class="muted">Unggah gambar pada mode Image to Video untuk melihat referensi di sini.</span></div></section>
+<section class="card"><h2>Storyboard otomatis</h2><div id="scenes" class="muted">Storyboard 5 scene akan muncul setelah tombol dibuat.</div></section>
+<section class="card"><h2>Alur menghasilkan video</h2><ol class="muted"><li>Tulis ide dan atur gaya video.</li><li>Buat lalu salin prompt.</li><li>Buka layanan video AI yang mendukung prompt atau gambar.</li><li>Masukkan prompt dan referensi, lalu generate.</li><li>Unduh hasil video dari layanan tersebut.</li></ol><p class="muted">BY SANUSI tidak meminta kata sandi atau API key. Jangan bagikan kredensial akun kepada siapa pun.</p></section>
+</div></div>
+<footer>BY SANUSI · AI AUTO VIDEO STUDIO · Versi awal</footer>
+</main>
+<script>
+let mode='text', imageUrl='';
+const $=id=>document.getElementById(id);
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');mode=btn.dataset.mode;$('uploadWrap').classList.toggle('hidden',mode!=='image')}));
+$('upload').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;if(imageUrl)URL.revokeObjectURL(imageUrl);imageUrl=URL.createObjectURL(f);$('preview').innerHTML='';const img=document.createElement('img');img.src=imageUrl;img.alt='Gambar referensi';$('preview').appendChild(img)});
+function build(){const idea=$('idea').value.trim();if(!idea){alert('Tuliskan ide video terlebih dahulu.');return ''}return `${mode==='image'?'Animate the uploaded reference image while preserving the main subject, identity, clothing, colors, and composition.':'Create a video based on this concept:'} ${idea}\nVisual style: ${$('style').value}.\nCamera movement: ${$('camera').value}.\nAspect ratio: ${$('ratio').value}. Target duration: ${$('duration').value}. Target quality: ${$('quality').value} if supported.\nUse coherent motion, natural physics, consistent subject details, polished lighting, clear composition, smooth transitions, and professional cinematic quality. Avoid flicker, warped anatomy, extra limbs, text artifacts, sudden identity changes, and unwanted scene cuts.`}
+$('make').onclick=()=>{const p=build();if(p)$('prompt').textContent=p};
+$('copy').onclick=async()=>{const p=$('prompt').textContent;if(p.startsWith('Prompt yang')){alert('Buat prompt terlebih dahulu.');return}try{await navigator.clipboard.writeText(p);alert('Prompt berhasil disalin.')}catch(e){alert('Browser tidak mengizinkan salin otomatis. Tekan lama teks prompt lalu salin.')}};
+$('story').onclick=()=>{const idea=$('idea').value.trim();if(!idea){alert('Tuliskan ide video terlebih dahulu.');return}const beats=['Opening: perkenalkan lokasi dan suasana','Build-up: tampilkan subjek dan tujuan','Main action: momen utama cerita','Detail shot: close-up ekspresi atau detail penting','Ending: penutup sinematik yang kuat'];$('scenes').innerHTML='';beats.forEach((b,i)=>{const d=document.createElement('div');d.className='scene';const strong=document.createElement('strong');strong.textContent='Scene '+(i+1)+' — '+b;const p=document.createElement('div');p.textContent=idea;d.append(strong,p);$('scenes').appendChild(d)})};
+$('clear').onclick=()=>{$('idea').value='';$('prompt').textContent='Prompt yang dibuat akan muncul di sini.';$('scenes').textContent='Storyboard 5 scene akan muncul setelah tombol dibuat.';$('upload').value='';$('preview').innerHTML='<span class="muted">Unggah gambar pada mode Image to Video untuk melihat referensi di sini.</span>';if(imageUrl)URL.revokeObjectURL(imageUrl);imageUrl=''};
+</script></body></html>
