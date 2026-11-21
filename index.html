@@ -2,89 +2,137 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090b14">
-<title>BY SANUSI — AI Auto Video Studio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101426">
+<title>BY SANUSI – AI AUTO VIDEO STUDIO v3.0</title>
 <style>
-:root{--bg:#090b14;--panel:#121827;--panel2:#0d1320;--line:#273149;--muted:#aab3c7;--text:#f5f6fb;--purple:#8b5cf6;--pink:#c084fc;--green:#34d399}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 78% 0%,#28104b 0,transparent 34%),var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-header{height:66px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 18px;position:sticky;top:0;background:#090b14ee;backdrop-filter:blur(12px);z-index:5}
-.brand{font-weight:900;letter-spacing:.8px}.brand span{color:#b58aff}.tag{font-size:9px;color:#aeb5c7;letter-spacing:2px}
-main{max-width:1180px;margin:26px auto;padding:0 14px}.hero h1{font-size:clamp(25px,4vw,38px);margin:0 0 4px}.muted{color:var(--muted)}.hero p{margin:0 0 18px}
-.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(290px,.85fr);gap:16px;align-items:start}.stack{display:grid;gap:16px}
-.card{background:linear-gradient(145deg,#151d2e,#101522);border:1px solid var(--line);border-radius:17px;padding:16px;box-shadow:0 12px 35px #0003}.card h2{font-size:16px;margin:0 0 13px}
-label{display:block;color:#d8deec;font-size:12px;margin:12px 0 6px}textarea,select,input{width:100%;background:#090f1c;color:var(--text);border:1px solid #303b53;border-radius:9px;padding:11px;font:inherit;outline:none}textarea{min-height:100px;resize:vertical}textarea:focus,select:focus,input:focus{border-color:#9b72ff}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-button{border:0;border-radius:9px;padding:10px 13px;font-weight:700;color:white;background:linear-gradient(100deg,#7657ed,#a855f7);cursor:pointer}
-button.secondary{background:#222c40;border:1px solid #35415b}button.ghost{background:#151d2d;border:1px solid #35415b}button:active{transform:scale(.98)}
-.output{white-space:pre-wrap;background:#090f1c;border:1px solid #303b53;border-radius:10px;padding:13px;min-height:100px;color:#e9eafa;font-size:13px;overflow-wrap:anywhere}
-.preview{height:190px;border:1px dashed #47536d;border-radius:12px;display:grid;place-items:center;text-align:center;color:var(--muted);padding:10px;overflow:hidden;background:#090f1c}.preview img{max-width:100%;max-height:100%;object-fit:contain}
-.scene{border:1px solid #2d3850;border-left:3px solid #9b72ff;border-radius:10px;padding:12px;margin-top:10px;background:#0b1120}.scene h3{font-size:13px;margin:0 0 6px}.scene p{font-size:12px;color:#d0d7e8;margin:5px 0}.scene .buttons{margin-top:8px}
-.small{font-size:11px;color:var(--muted)}.notice{background:#201a32;border:1px solid #554080;padding:11px;border-radius:10px;color:#ddd3f6;font-size:12px}
-footer{text-align:center;color:#8993a9;font-size:11px;padding:28px 0 40px}
-@media(max-width:760px){.layout{grid-template-columns:1fr}.grid2{grid-template-columns:1fr 1fr}.card{padding:13px}header{height:58px}}
-@media(max-width:390px){.grid2{grid-template-columns:1fr}}
+:root{--bg:#0b1020;--panel:#151d33;--panel2:#1d2944;--text:#f4f7ff;--muted:#aab6d1;--line:#2c3a5c;--accent:#7c5cff;--accent2:#19c6a3;--danger:#ff7d8d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0%,#20234c 0,#0b1020 42%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:25px 16px 18px;text-align:center;border-bottom:1px solid var(--line);background:#0b1020cc}
+.logo{font-size:12px;letter-spacing:3px;color:#b8aaff;font-weight:800}.brand{font-size:clamp(25px,7vw,38px);font-weight:900;letter-spacing:.5px;margin:5px 0}.sub{color:var(--muted);font-size:13px}.pill{display:inline-block;background:#173d3a;color:#7ff0d3;border:1px solid #286b60;border-radius:99px;padding:4px 10px;font-size:11px;font-weight:700;margin-top:10px}
+main{max-width:900px;margin:auto;padding:16px 13px 40px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:8px 0 16px}.tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:11px 6px;border-radius:12px;font-weight:700;font-size:12px}.tab.active{background:var(--accent);color:white;border-color:var(--accent)}
+.card{background:linear-gradient(160deg,#18223b,#121a2e);border:1px solid var(--line);border-radius:17px;padding:16px;margin:12px 0;box-shadow:0 10px 30px #0002}.card h2{font-size:18px;margin:0 0 4px}.hint{color:var(--muted);font-size:12px;margin:0 0 14px}
+label{display:block;font-size:12px;font-weight:750;color:#d8e0f6;margin:12px 0 6px}input,select,textarea{width:100%;background:#0c1428;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit;outline:none}textarea{min-height:100px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:#8a75ff}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}.btn{border:0;border-radius:11px;padding:11px 14px;font-weight:800;color:white;background:var(--accent);font-size:13px}.btn.secondary{background:#293858;border:1px solid #405174}.btn.green{background:#087d68}.btn.red{background:#703344}.output{white-space:pre-wrap;overflow-wrap:anywhere;background:#0a1224;border:1px solid var(--line);border-radius:12px;padding:13px;min-height:70px;color:#e5ebff;font-size:13px}
+.scene{border:1px solid var(--line);border-radius:12px;padding:12px;margin:9px 0;background:#101a30}.scene h3{font-size:14px;margin:0 0 6px;color:#c7bcff}.scene p{font-size:12px;color:#dbe3f8;margin:5px 0}.scene button{margin-top:7px}
+.small{font-size:11px;color:var(--muted)}.notice{background:#302a18;border:1px solid #66532a;color:#ffe6a4;padding:12px;border-radius:12px;font-size:12px;margin:12px 0}.good{background:#12332e;border-color:#28675b;color:#a3f3df}.item{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0}.item:last-child{border:0}.item strong{font-size:13px}.item a{color:#c5baff}.hidden{display:none!important}footer{text-align:center;color:var(--muted);font-size:11px;padding:20px}
+@media(max-width:520px){.row{grid-template-columns:1fr}.tabs{grid-template-columns:repeat(3,1fr)}.tab{font-size:11px;padding:10px 3px}.card{padding:13px}}
 </style>
 </head>
 <body>
-<header><div><div class="brand">BY <span>SANUSI</span></div><div class="tag">AI AUTO VIDEO STUDIO</div></div><div class="tag">CREATIVE STUDIO</div></header>
+<header>
+  <div class="logo">BY SANUSI PRESENTS</div>
+  <div class="brand">AI AUTO VIDEO STUDIO</div>
+  <div class="sub">Creative Storyboard & Prompt Studio · Version 3.0</div>
+  <div class="pill">FREE-FIRST · NO REPLICATE BILLING</div>
+</header>
 <main>
-<section class="hero"><h1>Ubah ide menjadi video.</h1><p class="muted">Studio persiapan video AI: prompt, storyboard, dan aset dalam satu tempat.</p></section>
-<div class="layout">
-<div class="stack">
-<section class="card">
-<h2>1. Buat proyek video</h2>
-<div class="buttons" style="margin-top:0"><button id="textMode">Text to Video</button><button class="secondary" id="imageMode">Image to Video</button></div>
-<label for="idea">Ide atau cerita video</label>
-<textarea id="idea" placeholder="Contoh: seekor anak kucing menemukan taman ajaib saat matahari terbit..."></textarea>
-<div class="grid2">
-<div><label for="style">Gaya video</label><select id="style"><option>Cinematic realistic</option><option>3D animation</option><option>Anime</option><option>Documentary</option><option>Fantasy cinematic</option><option>Product commercial</option></select></div>
-<div><label for="ratio">Rasio video</label><select id="ratio"><option>9:16 — Reels / Shorts</option><option>16:9 — YouTube</option><option>1:1 — Square</option><option>4:5 — Instagram</option></select></div>
-<div><label for="duration">Durasi target</label><select id="duration"><option>10 detik</option><option>15 detik</option><option>30 detik</option><option>60 detik</option></select></div>
-<div><label for="quality">Kualitas target</label><select id="quality"><option>1080p</option><option>720p</option><option>4K if supported</option></select></div>
-</div>
-<label for="camera">Gerakan kamera</label><select id="camera"><option>Slow cinematic dolly-in</option><option>Tracking shot</option><option>Wide establishing shot</option><option>Close-up with gentle push-in</option><option>Dynamic handheld</option><option>Orbit camera</option></select>
-<div id="imageUploadWrap" hidden><label for="reference">Unggah gambar referensi (opsional)</label><input id="reference" type="file" accept="image/*"></div>
-<div class="buttons"><button id="makePrompt">✨ Buat Prompt Otomatis</button><button class="secondary" id="reset">Reset</button></div>
-</section>
-<section class="card">
-<h2>2. Prompt video siap digunakan</h2>
-<div id="prompt" class="output">Prompt yang dibuat akan muncul di sini.</div>
-<div class="buttons"><button id="copyPrompt">Salin Prompt</button><button class="secondary" id="makeStoryboard">Buat Storyboard 5 Scene</button></div>
-<p class="small">Prompt dapat disalin ke layanan video AI pilihan Anda. Pembuatan video belum berjalan langsung di halaman ini.</p>
-</section>
-</div>
-<div class="stack">
-<section class="card"><h2>Preview gambar referensi</h2><div class="preview" id="preview">Unggah gambar pada mode Image to Video untuk melihat referensi di sini.</div></section>
-<section class="card"><h2>3. Storyboard profesional</h2><p class="small">Lima scene dengan aksi, visual, dan arahan kamera yang berbeda berdasarkan ide proyek.</p><div id="storyboard"><div class="notice">Storyboard 5 scene akan muncul setelah tombol dibuat.</div></div><div class="buttons" id="storyActions" hidden><button id="downloadStory" class="secondary">Unduh Storyboard (.txt)</button><button id="copyAll" class="ghost">Salin Semua Scene</button></div></section>
-<section class="card"><h2>Alur menghasilkan video</h2><ol class="small"><li>Tulis ide dan atur gaya video.</li><li>Buat prompt dan storyboard.</li><li>Salin prompt ke layanan video AI yang mendukung.</li><li>Generate di layanan tersebut dan unduh hasilnya.</li></ol><div class="notice">BY SANUSI tidak meminta kata sandi atau API key Anda. Jangan bagikan kredensial akun kepada siapa pun.</div></section>
-</div>
-</div>
-<footer>BY SANUSI · AI AUTO VIDEO STUDIO · Versi 2.0</footer>
+  <div class="tabs">
+    <button class="tab active" data-tab="studio">🎬 Studio</button>
+    <button class="tab" data-tab="story">📖 Storyboard</button>
+    <button class="tab" data-tab="library">📁 Galeri</button>
+  </div>
+
+  <section id="studio" class="panel">
+    <div class="card">
+      <h2>🎥 Prompt Generator</h2>
+      <p class="hint">Buat prompt video siap salin untuk layanan AI pilihanmu.</p>
+      <div class="row">
+        <div><label>Mode</label><select id="mode"><option>Text-to-Video</option><option>Image-to-Video</option></select></div>
+        <div><label>Gaya visual</label><select id="style"><option>3D Animation</option><option>Cinematic Realistic</option><option>Anime</option><option>Pixar-like 3D cartoon</option><option>Documentary</option><option>Fantasy</option><option>Stop Motion</option></select></div>
+      </div>
+      <label>Ide / deskripsi video</label><textarea id="idea" placeholder="Contoh: seekor kucing oren menjelajahi hutan ajaib..."></textarea>
+      <div class="row">
+        <div><label>Rasio video</label><select id="ratio"><option>9:16 vertical</option><option>16:9 landscape</option><option>1:1 square</option><option>4:5 portrait</option></select></div>
+        <div><label>Durasi target</label><select id="duration"><option>5 seconds</option><option>8 seconds</option><option>10 seconds</option><option>15 seconds</option></select></div>
+      </div>
+      <div class="row">
+        <div><label>Gerakan kamera</label><select id="camera"><option>smooth cinematic camera movement</option><option>slow dolly in</option><option>tracking shot</option><option>wide establishing shot</option><option>handheld documentary camera</option><option>orbit camera movement</option></select></div>
+        <div><label>Kualitas visual</label><select id="quality"><option>high detail, clean composition</option><option>natural lighting, realistic details</option><option>vibrant colors, polished look</option><option>soft light, dreamy atmosphere</option></select></div>
+      </div>
+      <div class="btns"><button class="btn" id="makePrompt">✨ Generate Prompt</button><button class="btn secondary" id="clearPrompt">Reset</button></div>
+    </div>
+    <div class="card">
+      <h2>Hasil Prompt</h2><p class="hint">Salin prompt ini ke layanan AI video eksternal.</p>
+      <div id="promptOut" class="output">Prompt akan muncul di sini.</div>
+      <div class="btns"><button class="btn green" id="copyPrompt">Salin Prompt</button><button class="btn secondary" id="savePrompt">Simpan ke Riwayat</button></div>
+    </div>
+    <div class="card">
+      <h2>🧩 Layanan AI Eksternal</h2>
+      <p class="hint">Buka layanan di tab baru, lalu tempel prompt. Ketersediaan gratis mengikuti aturan masing-masing layanan.</p>
+      <div class="item"><div><strong>Hugging Face Spaces</strong><div class="small">Cari demo text-to-video</div></div><a target="_blank" rel="noopener" href="https://huggingface.co/spaces?search=text-to-video">Buka ↗</a></div>
+      <div class="item"><div><strong>ModelScope demo</strong><div class="small">Demo yang pernah dicoba</div></div><a target="_blank" rel="noopener" href="https://huggingface.co/spaces/mediasynthesismuseum/modelscope-text-to-video">Buka ↗</a></div>
+      <div class="notice">Website ini tidak menjalankan model video berbayar dan tidak mengirim permintaan ke Replicate. Demo eksternal dapat antre, error, membatasi penggunaan, atau mengubah ketentuan gratis.</div>
+    </div>
+  </section>
+
+  <section id="story" class="panel hidden">
+    <div class="card">
+      <h2>📖 Storyboard Generator</h2><p class="hint">Bagi satu ide menjadi lima adegan dengan aksi dan kamera berbeda.</p>
+      <label>Ide cerita</label><textarea id="storyIdea" placeholder="Tuliskan cerita yang ingin dibuat..."></textarea>
+      <div class="row"><div><label>Gaya</label><select id="storyStyle"><option>3D Animation</option><option>Cinematic Realistic</option><option>Anime</option><option>Fantasy</option></select></div><div><label>Jumlah scene</label><select id="sceneCount"><option value="5">5 scene</option><option value="10">10 scene</option></select></div></div>
+      <div class="btns"><button class="btn" id="makeStory">Buat Storyboard</button><button class="btn secondary" id="copyAllScenes">Salin Semua Scene</button><button class="btn secondary" id="downloadStory">Unduh .TXT</button></div>
+    </div>
+    <div id="scenesOut" class="card"><p class="hint">Storyboard akan muncul di sini.</p></div>
+  </section>
+
+  <section id="library" class="panel hidden">
+    <div class="card">
+      <h2>📁 Galeri & Riwayat Lokal</h2><p class="hint">Data disimpan di browser perangkat ini. Tidak otomatis tersinkron ke perangkat lain.</p>
+      <label>Tambahkan video dari perangkat</label><input id="videoFile" type="file" accept="video/*">
+      <div id="videoPreview"></div>
+      <div class="btns"><button class="btn secondary" id="clearHistory">Hapus Riwayat Prompt</button></div>
+    </div>
+    <div class="card"><h2>Riwayat Prompt</h2><div id="historyList"><p class="small">Belum ada prompt tersimpan.</p></div></div>
+    <div class="card"><h2>Video di perangkat</h2><div id="videoList"><p class="small">Pilih video di atas untuk melihatnya. File video tidak diunggah ke server.</p></div></div>
+  </section>
+
+  <div class="notice good">Privasi: prompt dan riwayat disimpan lokal di browser. Video yang kamu pilih hanya ditampilkan sementara di halaman dan tidak diunggah ke server.</div>
 </main>
+<footer>BY SANUSI · AI AUTO VIDEO STUDIO v3.0 · Dibuat untuk penggunaan gratis-first</footer>
 <script>
-let mode='text', scenes=[];
 const $=id=>document.getElementById(id);
-const getVal=id=>$(id).value;
-function setMode(next){mode=next;$('textMode').className=next==='text'?'':'secondary';$('imageMode').className=next==='image'?'':'secondary';$('imageUploadWrap').hidden=next!=='image';$('preview').textContent=next==='image'?'Unggah gambar referensi untuk melihat pratinjau.':'Mode Text to Video dipilih.'}
-$('textMode').onclick=()=>setMode('text');$('imageMode').onclick=()=>setMode('image');
-$('reference').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const url=URL.createObjectURL(f);$('preview').innerHTML='';const img=document.createElement('img');img.src=url;$('preview').appendChild(img)});
-function makePrompt(){const idea=getVal('idea').trim();if(!idea){alert('Tulis ide atau cerita video terlebih dahulu.');return ''}const p=`Create a ${getVal('duration')} video based on this concept: ${idea}\nVisual style: ${getVal('style')}.\nCamera movement: ${getVal('camera')}.\nAspect ratio: ${getVal('ratio')}. Target duration: ${getVal('duration')}. Target quality: ${getVal('quality')} if supported.\nMaintain coherent motion, natural physics, consistent subject details, polished lighting, clear composition, smooth transitions, and professional cinematic quality. Avoid flicker, warped anatomy, extra limbs, text artifacts, sudden identity changes, and unwanted scene cuts.`;$('prompt').textContent=p;return p}
-$('makePrompt').onclick=makePrompt;
-async function copyText(t){try{await navigator.clipboard.writeText(t);alert('Berhasil disalin.')}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();alert('Teks disalin.')}}
-$('copyPrompt').onclick=()=>{const t=$('prompt').textContent;if(t==='Prompt yang dibuat akan muncul di sini.')return alert('Buat prompt terlebih dahulu.');copyText(t)};
-function buildScenes(){const idea=getVal('idea').trim();if(!idea){alert('Tulis ide cerita terlebih dahulu.');return}const style=getVal('style'),camera=getVal('camera');const beats=[
-['Scene 1 — Opening / Establishing','Perkenalkan lokasi, suasana, waktu, dan subjek utama.','Wide establishing shot, kamera bergerak perlahan untuk memperlihatkan lingkungan.'],
-['Scene 2 — Pengenalan aksi','Tampilkan subjek mulai melakukan aksi pertama yang relevan dengan cerita.','Medium shot, tracking lembut mengikuti gerakan subjek.'],
-['Scene 3 — Momen utama','Tampilkan kejadian paling penting atau menarik dari ide cerita.','Dynamic close-up, fokus pada ekspresi dan detail aksi utama.'],
-['Scene 4 — Detail / Klimaks','Perlihatkan reaksi, detail penting, atau peningkatan emosi cerita.','Close-up lalu slow push-in, pencahayaan sinematik dan fokus tajam.'],
-['Scene 5 — Ending / Penutup','Akhiri cerita dengan hasil yang jelas dan komposisi visual yang berkesan.','Wide closing shot, kamera menjauh perlahan dan tahan pada frame akhir.']
-];scenes=beats.map((b,i)=>({title:b[0],action:b[1]+' Konsep: '+idea,visual:`${b[1]} ${idea} Gaya visual: ${style}.`,camera:b[2]+' Gerakan dasar: '+camera+'.',prompt:`${b[1]} ${idea}. ${style}, cinematic composition, consistent subject appearance, natural movement, detailed environment. Camera: ${b[2]}`}));renderScenes()}
-function renderScenes(){$('storyboard').innerHTML='';scenes.forEach((s,i)=>{const div=document.createElement('article');div.className='scene';const h=document.createElement('h3');h.textContent=s.title;div.appendChild(h);[['Aksi',s.action],['Visual',s.visual],['Kamera',s.camera],['Prompt scene',s.prompt]].forEach(([label,value])=>{const p=document.createElement('p');p.textContent=label+': '+value;div.appendChild(p)});const row=document.createElement('div');row.className='buttons';const b=document.createElement('button');b.className='secondary';b.textContent='Salin prompt scene';b.onclick=()=>copyText(s.prompt);row.appendChild(b);div.appendChild(row);$('storyboard').appendChild(div)});$('storyActions').hidden=false}
-$('makeStoryboard').onclick=buildScenes;
-$('copyAll').onclick=()=>copyText(scenes.map(s=>`${s.title}\nAksi: ${s.action}\nVisual: ${s.visual}\nKamera: ${s.camera}\nPrompt: ${s.prompt}`).join('\n\n'));
-$('downloadStory').onclick=()=>{const body='BY SANUSI — STORYBOARD 5 SCENE\n\n'+scenes.map(s=>`${s.title}\nAksi: ${s.action}\nVisual: ${s.visual}\nKamera: ${s.camera}\nPrompt: ${s.prompt}`).join('\n\n');const blob=new Blob([body],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='by-sanusi-storyboard.txt';a.click();URL.revokeObjectURL(url)};
-$('reset').onclick=()=>{if(!confirm('Reset semua isi proyek?'))return;$('idea').value='';$('prompt').textContent='Prompt yang dibuat akan muncul di sini.';$('storyboard').innerHTML='<div class="notice">Storyboard 5 scene akan muncul setelah tombol dibuat.</div>';$('storyActions').hidden=true;scenes=[];$('reference').value='';setMode('text')};
-setMode('text');
+let currentPrompt="", currentStory="";
+document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b===btn));
+ document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("hidden",p.id!==btn.dataset.tab));
+}));
+function buildPrompt(){
+ const idea=$("idea").value.trim(); if(!idea){alert("Masukkan ide video terlebih dahulu.");return;}
+ currentPrompt=`${idea}. Visual style: ${$("style").value}. Mode: ${$("mode").value}. Aspect ratio: ${$("ratio").value}. Target duration: ${$("duration").value}. Camera: ${$("camera").value}. Visual quality: ${$("quality").value}. Smooth natural motion, consistent subject appearance, coherent scene, no unwanted text, no watermark.`;
+ $("promptOut").textContent=currentPrompt;
+}
+$("makePrompt").onclick=buildPrompt;
+$("clearPrompt").onclick=()=>{["idea"].forEach(id=>$(id).value="");$("promptOut").textContent="Prompt akan muncul di sini.";currentPrompt="";};
+async function copyText(t){if(!t){alert("Belum ada teks untuk disalin.");return;}try{await navigator.clipboard.writeText(t);alert("Berhasil disalin.");}catch(e){alert("Salin manual: tekan lama teks lalu pilih Salin.");}}
+$("copyPrompt").onclick=()=>copyText(currentPrompt);
+function getHistory(){try{return JSON.parse(localStorage.getItem("bys_history")||"[]")}catch(e){return []}}
+function renderHistory(){const h=getHistory();$("historyList").innerHTML=h.length?h.map((x,i)=>`<div class="item"><div><strong>Prompt ${h.length-i}</strong><div class="small">${escapeHtml(x.slice(0,100))}${x.length>100?"…":""}</div></div><button class="btn secondary" data-copy="${i}">Salin</button></div>`).join(""):'<p class="small">Belum ada prompt tersimpan.</p>';document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>copyText(h[+b.dataset.copy]));}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+$("savePrompt").onclick=()=>{if(!currentPrompt){buildPrompt();if(!currentPrompt)return;}let h=getHistory();h.unshift(currentPrompt);localStorage.setItem("bys_history",JSON.stringify(h.slice(0,30)));renderHistory();alert("Prompt disimpan di browser ini.");};
+$("clearHistory").onclick=()=>{if(confirm("Hapus semua riwayat prompt?")){localStorage.removeItem("bys_history");renderHistory();}};
+function makeScenes(){
+ const idea=$("storyIdea").value.trim();if(!idea){alert("Masukkan ide cerita terlebih dahulu.");return;}
+ const count=+$("sceneCount").value, style=$("storyStyle").value;
+ const beats=[
+ ["Pembukaan","Tampilkan lokasi dan karakter utama; perkenalkan suasana cerita.","wide establishing shot"],
+ ["Awal perjalanan","Karakter mulai bergerak dan menemukan tujuan atau petunjuk.","tracking shot"],
+ ["Tantangan","Muncul kejadian tak terduga yang mengubah situasi.","medium shot with gentle camera push-in"],
+ ["Puncak cerita","Karakter menghadapi tantangan utama dengan aksi yang jelas.","dynamic close-up and smooth orbit"],
+ ["Penutup","Tampilkan penyelesaian dan akhir cerita yang hangat.","slow cinematic pull-back"]
+ ];
+ let arr=[];
+ for(let i=0;i<count;i++){let b=beats[i%5];let detail=count===10?`Bagian ${Math.floor(i/5)+1}: `:"";arr.push({title:`Scene ${i+1} — ${b[0]}`,action:`${detail}${b[1]} Cerita utama: ${idea}`,camera:b[2],prompt:`${idea}. Scene ${i+1}: ${b[0]}. ${b[1]} Visual style: ${style}. Camera: ${b[2]}. Maintain consistent characters, clothing, colors, and environment. Smooth natural motion, cinematic lighting.`});}
+ currentStory=arr.map(s=>`${s.title}\nAksi: ${s.action}\nKamera: ${s.camera}\nPrompt: ${s.prompt}`).join("\n\n");
+ $("scenesOut").innerHTML=arr.map((s,i)=>`<div class="scene"><h3>${s.title}</h3><p><b>Aksi:</b> ${escapeHtml(s.action)}</p><p><b>Kamera:</b> ${escapeHtml(s.camera)}</p><p><b>Prompt:</b> ${escapeHtml(s.prompt)}</p><button class="btn secondary" data-scene="${i}">Salin prompt scene</button></div>`).join("");
+ document.querySelectorAll("[data-scene]").forEach(b=>b.onclick=()=>copyText(arr[+b.dataset.scene].prompt));
+}
+$("makeStory").onclick=makeScenes;
+$("copyAllScenes").onclick=()=>copyText(currentStory);
+$("downloadStory").onclick=()=>{if(!currentStory){alert("Buat storyboard terlebih dahulu.");return;}downloadText("by-sanusi-storyboard.txt",currentStory);};
+function downloadText(name,text){const a=document.createElement("a"),u=URL.createObjectURL(new Blob([text],{type:"text/plain"}));a.href=u;a.download=name;a.click();URL.revokeObjectURL(u);}
+$("videoFile").onchange=e=>{const f=e.target.files[0];if(!f)return;const url=URL.createObjectURL(f);$("videoPreview").innerHTML=`<video controls playsinline style="width:100%;max-height:280px;margin-top:12px;border-radius:12px;background:#000" src="${url}"></video><p class="small">${escapeHtml(f.name)} · ${(f.size/1048576).toFixed(1)} MB</p>`;$("videoList").innerHTML=`<div class="item"><div><strong>${escapeHtml(f.name)}</strong><div class="small">File lokal · tidak diunggah</div></div><a href="${url}" download="${escapeHtml(f.name)}">Unduh ↧</a></div>`;};
+renderHistory();
 </script>
-</body></html>
+</body>
+</html>
